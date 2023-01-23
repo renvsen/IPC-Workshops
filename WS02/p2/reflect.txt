@@ -1,10 +1,10 @@
 ///////////////////////////////////////////////////////////////////////////
                               Reflection
                           Workshop - #2 (P2)
-Full Name  : 
-Student ID#: 
-Email      : 
-Section    : 
+Full Name  : 	Rendell Velasco
+Student ID#: 	140014218
+Email      : 	rvelasco6@mysenecacollege.ca
+Section    : 	NDD
 
 Authenticity Declaration:
 
@@ -13,3 +13,16 @@ shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
 
+1. Price1 and the corresponding converted cent value does not properly represent the intended value double and float types cannot store all values and only approximate because of the significand.
+
+2. C evaluates with operands of the same data types. If this is not the case there is a need for a type coercion by either implicitly or explicitly. If they are not the same data type in an arithmetic expression they are promoted to the higher datatype.
+
+ In an assignment expression if the left operand is a higher data type than the right operand it will promote the right operand. On the contrary, if the left operand is a lower data type than the right operand it will truncate the assigned value based on the limitation of data type.
+
+  With all of the print statements, all the arithmetic expressions are dealing with an integer and a double data type. Since there is a difference in data types in the expression the integer data types are promoted to doubles. With the first print statement it is implicitly casted into a double because of the decimal point given to the 100. With the second and third print statements it is explicitly casted to a double by adding (double) in front of the operand. These are the type coercions in the C programming language due to the structure of type-based programming.
+
+3. a) The value of the variable result is 72. Firstly, this is because a division between 2 integers must evaluate to an integer. One of the operands must be explicitly or implicitly turned into a double so the other operand would be promoted to the higher datatype. Secondly, even if the first step is done, it must be stored into a double data type. If not, it will be truncated and decimals would be lost. If we want to use the lf format there must be a type coercion. 
+
+b) The values displayed for the samples are the following: sample 1 is”0.000000000000000000000”, sample 2 is “72”, sample 3 is “0.000000000000000000000”, and sample 4 is “72”.
+
+c) I can conclude that specific formats need specific data types.it will print the format specifiers rather than the argument we passed to it. That is why even though we passed an integer argument, what is displayed is a double since it is the format in the printf function. 
