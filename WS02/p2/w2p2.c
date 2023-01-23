@@ -64,7 +64,7 @@ int main(void)
 
     nofShirts = nofPatShirts + nofSalShirts + nofTomShirts;
 
-    printf("\n%8s %4s %5s %3s %9s %9s %9s\n", "Customer", "Size", "Price", "QTY", "Sub-Total", "Tax", "Total");
+    printf("\n%8s %4s %5s %3s %9s %9s %9s\n", "Customer", "Size", "Price", "Qty", "Sub-Total", "Tax", "Total");
     printf("%8s %4s %5s %3s %9s %9s %9s\n", "--------", "----", "-----", "---", "---------", "---------", "---------");
 
     subTotal = (priceofSmallShirt * nofPatShirts + 0.005) * 100;
@@ -92,7 +92,7 @@ int main(void)
     total = subTotal + taxes + 0.5;
     overallTotal += total;
 
-    printf("Tommy    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", tomSize, priceofLargeShirt, nofSalShirts, (double)subTotal / 100, (double)taxes / 100, (double)total / 100);
+    printf("Tommy    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", tomSize, priceofLargeShirt, nofTomShirts, (double)subTotal / 100, (double)taxes / 100, (double)total / 100);
     printf("%8s %4s %5s %3s %9s %9s %9s\n", "--------", "----", "-----", "---", "---------", "---------", "---------");
     printf("%23s %9.4lf %9.4lf %9.4lf\n", " ", (double) overallSubTotal / 100, (double) taxesTotal /100, (double) overallTotal / 100);
 
@@ -140,12 +140,10 @@ int main(void)
 
     preTaxAverage = ((double)overallSubTotal / nofShirts + 0.005) * 100;
 
-    printf("\nAverage cost/shirt: %9.4lf\n", (double) preTaxAverage / 10000 );
+    printf("\nAverage cost/shirt: $%.4lf\n", (double) preTaxAverage / 10000 );
 
     //Coins post-tax
 
-   printf("\nDaily retail sales represented by coins\n");
-    printf("=======================================\n");
     printf("\nSales INCLUDING tax\n");
     printf("%-8s %3s %9s\n", "Coin", "Qty", "Balance");
     printf("%8s %3s %9s\n", "--------", "---", "---------");
@@ -183,7 +181,7 @@ int main(void)
 
     postTaxAverage = ((double)overallTotal / nofShirts + 0.005) * 100;
 
-    printf("\nAverage cost/shirt: %9.4lf\n", (double) postTaxAverage / 10000 );
+    printf("\nAverage cost/shirt: $%.4lf\n", (double) postTaxAverage / 10000 );
 
 
 
