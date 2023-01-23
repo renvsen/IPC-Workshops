@@ -2,10 +2,10 @@
 
                               Reflection
                              Workshop - #1
-Full Name  : 
-Student ID#: 
-Email      : 
-Section    : 
+Full Name  :  Rendell Velasco
+Student ID#:  140014218
+Email      :  rvelasco6@myseneca.ca
+Section    :  NDD
 
 Authenticity Declaration:
 
@@ -14,4 +14,8 @@ shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
 
+1. I kind of have some previous experience programming in C. This is not the first time I am taking this course. I took this course previously during the fall of 2021 and winter of 2022. Sadly, I dropped the course midway since I was not happy with the grades I was going to get. Also, I switched programs and did a similar but simplified version of the ipc144. With this course, I believe it will be alot challenging but I'm going to be putting in a lot more effort than I previously did the past 2 times I have taken this.
 
+2.My understanding of the compilation process of a C text file into an executable program is that it is a form of translation. The text file written by the programmer is written so that we can easily understand but hard for the computer. Therefore, for the computer to understand it has to be translated into machine language. It is possible to code in machine language but it is too complicated and difficult to write. So, we made a process of compilation by coding in a programming language that we can understand then compiling it to machine language so the computer can run it. 
+
+3.I hope to achieve a good grade and build a solid foundation for my coding career. I will achieve this by studying daily and asking questions whenever I do not understand a certain concept or syntax with the code. Even with all this effort I do not think it will be easy and there will be a lot of frustrations, but I have hopes that it will all pay off in the end and will not regret doing my very best. 
