@@ -71,5 +71,6 @@ int main(void)
     printf("8. Based on product ID, product 2 is unique -> %d\n\n", productID2 != productID1 && productID2 != productID3);
     printf("9. Based on product ID, product 3 is unique -> %d\n", productID3 != productID1 && productID3 != productID2);
 
+
     return 0;
 }
