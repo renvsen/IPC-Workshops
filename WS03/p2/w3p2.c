@@ -2,8 +2,8 @@
                           Workshop - #3 (P2)
 Full Name  :    Rendell Velasco
 Student ID#:    140014128
-Email      : 
-Section    : 
+Email      :    rvelasco6@myseneca.ca
+Section    :    NDD
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
@@ -79,13 +79,13 @@ int main(void)
     printf("Typical number of daily servings: ");
     scanf("%d", &customerServings);
 
-    printf("\n The below table shows how your preferences align to the available products: \n\n");
+    printf("\nThe below table shows how your preferences align to the available products: \n\n");
 
     printf("--------------------+-------------+-------+\n");
     printf("  |     Coffee      |  Packaged   | With  |\n");
     printf("ID|      Type       | Bag Weight  | Cream |\n");
     printf("--+-----------------+-------------+-------+\n");
-    printf(" 1|       %d         |      %d      |   %d   |\n", customerStrength == type1, 3, 2);
+    printf(" 1|       %d         |      %d      |   %d   |\n", customerStrength == type1, );
 
     return 0;
 
