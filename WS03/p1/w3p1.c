@@ -67,7 +67,7 @@ int main(void)
     printf("5. Is the price of product 1 equal to or more than the price difference\n");
     printf("   of product 3 LESS product 2? ->  %d (price difference: $%.2lf)\n\n", price1 >= (price3 - price2), price3 - price2);
     printf("6. Is the price of product 2 equal to or more than the average price? -> %d\n\n", price2 >= averagePrice);
-    printf("7. Based on product ID, product 1 is unique -> %d\n\n", productID1 != productID2 && productID1 != productID3);
+    printf("7. Based on product ID, product 1 is unique -> %d\n\n", productID1 != productID2 && productID1 != productID3); // demorgans law !(productID1 == productID2 || productID1 == productID3) 
     printf("8. Based on product ID, product 2 is unique -> %d\n\n", productID2 != productID1 && productID2 != productID3);
     printf("9. Based on product ID, product 3 is unique -> %d\n", productID3 != productID1 && productID3 != productID2);
 
