@@ -20,6 +20,7 @@ int main(void)
     // You will need this when converting from grams to pounds (lbs)
     const double GRAMS_IN_LBS = 453.5924;
 
+    //Product
     //Coffee Type/Strength
     char type1, type2, type3;
 
@@ -187,18 +188,3 @@ int main(void)
     return 0;
 
 }
-
-
-/*
-
-Provided formatting parts for printf statements:
-
-As described in step-7
-======================
-printf(" 1 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n",
-
-As described in step-10
-=======================
-printf(" 1|       %d         |      %d      |   %d   |\n",
-
-*/
