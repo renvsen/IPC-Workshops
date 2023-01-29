@@ -23,16 +23,15 @@ int main(void)
     //Coffee Type/Strength
     char type1, type2, type3;
 
-    //Cofee Package Weight   
-    int weight1, weight2,weight3;
+    //Coffee Package Weight/Servings   
+    int weight1, weight2, weight3;
 
-    //Suggest Serving with Cream
+    //Suggest Serving with Cream/With cream
     char bestWithCream1, bestWithCream2, bestWithCream3;
 
     //Customer Preferences
-    char customerStrength;
+    char customerStrength, customerCream;
     int customerServings;
-    char customerCream;
 
     printf("Take a Break - Coffee Shop\n");
     printf("==========================\n\n");
@@ -67,12 +66,24 @@ int main(void)
     printf("   +------------------------+---------------+ With  |\n");
     printf("ID | Light | Medium | Rich  |  (G) | Lbs    | Cream |\n");
     printf("---+-------+--------+-------+------+--------+-------|\n");
-    printf(" 1 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n", type1 == 'L' || type1 == 'l', type1 == 'M' || type1 == 'm', type1 == 'R' || type1 == 'r', weight1, (double)weight1 / GRAMS_IN_LBS, bestWithCream1 == 'Y' || bestWithCream1 == 'y');
-    printf(" 2 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n", type2 == 'L' || type2 == 'l', type2 == 'M' || type2 == 'm', type2 == 'R' || type2 == 'r', weight2, (double)weight2 / GRAMS_IN_LBS, bestWithCream2 == 'Y' || bestWithCream2 == 'y');
-    printf(" 3 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n", type3 == 'L' || type3 == 'l', type3 == 'M' || type3 == 'm', type3 == 'R' || type3 == 'r', weight3, (double)weight3 / GRAMS_IN_LBS, bestWithCream3 == 'Y' || bestWithCream3 == 'y');
+    printf(" 1 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n", 
+        type1 == 'L' || type1 == 'l',
+        type1 == 'M' || type1 == 'm', 
+        type1 == 'R' || type1 == 'r',
+        weight1, (double)weight1 / GRAMS_IN_LBS, bestWithCream1 == 'Y' || bestWithCream1 == 'y');
+    printf(" 2 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n",
+        type2 == 'L' || type2 == 'l',
+        type2 == 'M' || type2 == 'm',
+        type2 == 'R' || type2 == 'r',
+        weight2, (double)weight2 / GRAMS_IN_LBS, bestWithCream2 == 'Y' || bestWithCream2 == 'y');
+    printf(" 3 |   %d   |   %d    |   %d   | %4d | %6.3lf |   %d   |\n", 
+        type3 == 'L' || type3 == 'l',
+        type3 == 'M' || type3 == 'm',
+        type3 == 'R' || type3 == 'r',
+        weight3, (double)weight3 / GRAMS_IN_LBS, bestWithCream3 == 'Y' || bestWithCream3 == 'y');
     
-    printf("\nEnter How you like your coffee...\n\n");
-    printf("Coffee strength ([L]ight), [M]edium, [R]ich: ");
+    printf("\nEnter how you like your coffee...\n\n");
+    printf("Coffee strength ([L]ight, [M]edium, [R]ich): ");
     scanf(" %c", &customerStrength);
     printf("Do you like your coffee with cream ([Y]es,[N]o): ");
     scanf(" %c", &customerCream);
@@ -85,7 +96,93 @@ int main(void)
     printf("  |     Coffee      |  Packaged   | With  |\n");
     printf("ID|      Type       | Bag Weight  | Cream |\n");
     printf("--+-----------------+-------------+-------+\n");
-    printf(" 1|       %d         |      %d      |   %d   |\n", customerStrength == type1, );
+    printf(" 1|       %d         |      %d      |   %d   |\n",
+        (customerStrength == 'L' || customerStrength == 'l') && (type1 == 'L' || type1 == 'l') ||
+        (customerStrength == 'M' || customerStrength == 'm') && (type1 == 'M' || type1 == 'm') ||
+        (customerStrength == 'R' || customerStrength == 'r') && (type1 == 'R' || type1 == 'r') ,
+
+        (customerServings >= 1 && customerServings <= 4) && (weight1 == 250) ||
+        (customerServings >= 4 && customerServings <= 9) && (weight1 == 500) ||
+        (customerServings >= 10) && (weight1 == 1000),
+
+        (customerCream == 'Y' || customerCream == 'y') && (bestWithCream1 == 'Y' || bestWithCream1 == 'y') ||
+        (customerCream == 'N' || customerCream == 'n') && (bestWithCream1 == 'N' || bestWithCream1 == 'n'));
+
+    printf(" 2|       %d         |      %d      |   %d   |\n",
+        (customerStrength == 'L' || customerStrength == 'l') && (type2 == 'L' || type2 == 'l') ||
+        (customerStrength == 'M' || customerStrength == 'm') && (type2 == 'M' || type2 == 'm') ||
+        (customerStrength == 'R' || customerStrength == 'r') && (type2 == 'R' || type2 == 'r'),
+
+        (customerServings >= 1 && customerServings <= 4) && (weight2 == 250) ||
+        (customerServings >= 4 && customerServings <= 9) && (weight2 == 500) ||
+        (customerServings >= 10) && (weight2 == 1000),
+
+        (customerCream == 'Y' || customerCream == 'y') && (bestWithCream2 == 'Y' || bestWithCream2 == 'y') ||
+        (customerCream == 'N' || customerCream == 'n') && (bestWithCream2 == 'N' || bestWithCream2 == 'n'));
+
+    printf(" 3|       %d         |      %d      |   %d   |\n",
+        (customerStrength == 'L' || customerStrength == 'l') && (type3 == 'L' || type3 == 'l') ||
+        (customerStrength == 'M' || customerStrength == 'm') && (type3 == 'M' || type3 == 'm') ||
+        (customerStrength == 'R' || customerStrength == 'r') && (type3 == 'R' || type3 == 'r'),
+
+        (customerServings >= 1 && customerServings <= 4) && (weight3 == 250) ||
+        (customerServings >= 4 && customerServings <= 9) && (weight3 == 500) ||
+        (customerServings >= 10) && (weight3 == 1000),
+
+        (customerCream == 'Y' || customerCream == 'y') && (bestWithCream3 == 'Y' || bestWithCream3 == 'y') ||
+        (customerCream == 'N' || customerCream == 'n') && (bestWithCream3 == 'N' || bestWithCream3 == 'n'));
+
+    printf("\nEnter how you like your coffee...\n\n");
+    printf("Coffee strength ([L]ight, [M]edium, [R]ich): ");
+    scanf(" %c", &customerStrength);
+    printf("Do you like your coffee with cream ([Y]es,[N]o): ");
+    scanf(" %c", &customerCream);
+    printf("Typical number of daily servings: ");
+    scanf("%d", &customerServings);
+
+    printf("\nThe below table shows how your preferences align to the available products: \n\n");
+
+    printf("--------------------+-------------+-------+\n");
+    printf("  |     Coffee      |  Packaged   | With  |\n");
+    printf("ID|      Type       | Bag Weight  | Cream |\n");
+    printf("--+-----------------+-------------+-------+\n");
+    printf(" 1|       %d         |      %d      |   %d   |\n",
+        (customerStrength == 'L' || customerStrength == 'l') && (type1 == 'L' || type1 == 'l') ||
+        (customerStrength == 'M' || customerStrength == 'm') && (type1 == 'M' || type1 == 'm') ||
+        (customerStrength == 'R' || customerStrength == 'r') && (type1 == 'R' || type1 == 'r'),
+
+        (customerServings >= 1 && customerServings <= 4) && (weight1 == 250) ||
+        (customerServings >= 4 && customerServings <= 9) && (weight1 == 500) ||
+        (customerServings >= 10) && (weight1 == 1000),
+
+        (customerCream == 'Y' || customerCream == 'y') && (bestWithCream1 == 'Y' || bestWithCream1 == 'y') ||
+        (customerCream == 'N' || customerCream == 'n') && (bestWithCream1 == 'N' || bestWithCream1 == 'n'));
+
+    printf(" 2|       %d         |      %d      |   %d   |\n",
+        (customerStrength == 'L' || customerStrength == 'l') && (type2 == 'L' || type2 == 'l') ||
+        (customerStrength == 'M' || customerStrength == 'm') && (type2 == 'M' || type2 == 'm') ||
+        (customerStrength == 'R' || customerStrength == 'r') && (type2 == 'R' || type2 == 'r'),
+
+        (customerServings >= 1 && customerServings <= 4) && (weight2 == 250) ||
+        (customerServings >= 4 && customerServings <= 9) && (weight2 == 500) ||
+        (customerServings >= 10) && (weight2 == 1000),
+
+        (customerCream == 'Y' || customerCream == 'y') && (bestWithCream2 == 'Y' || bestWithCream2 == 'y') ||
+        (customerCream == 'N' || customerCream == 'n') && (bestWithCream2 == 'N' || bestWithCream2 == 'n'));
+
+    printf(" 3|       %d         |      %d      |   %d   |\n",
+        (customerStrength == 'L' || customerStrength == 'l') && (type3 == 'L' || type3 == 'l') ||
+        (customerStrength == 'M' || customerStrength == 'm') && (type3 == 'M' || type3 == 'm') ||
+        (customerStrength == 'R' || customerStrength == 'r') && (type3 == 'R' || type3 == 'r'),
+
+        (customerServings >= 1 && customerServings <= 4) && (weight3 == 250) ||
+        (customerServings >= 4 && customerServings <= 9) && (weight3 == 500) ||
+        (customerServings >= 10) && (weight3 == 1000),
+
+        (customerCream == 'Y' || customerCream == 'y') && (bestWithCream3 == 'Y' || bestWithCream3 == 'y') ||
+        (customerCream == 'N' || customerCream == 'n') && (bestWithCream3 == 'N' || bestWithCream3 == 'n'));
+
+    printf("\nHope you found a product that suits your likes!\n");
 
     return 0;
 
