@@ -68,7 +68,7 @@ int main(void)
         if (loop == 'F' && (iterations >= 3 && iterations <= 20))
         {
             printf("FOR     : ");
-            for (iterations; iterations--;)
+            for (; iterations; iterations--)
             {
                 printf("F");
             }
