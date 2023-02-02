@@ -30,17 +30,15 @@ int main(void)
         printf("Enter loop type and the number of times to iterate (Quit=Q0): ");
         scanf(" %c%d", &loop, &iterations);
 
-        flag = (loop == 'Q' && iterations == 0) ? 0 : 1;
-
         if (loop == 'Q' && iterations)
         {
             printf("ERROR: To quit, the number of iterations should be 0!");
         }
-        else if (!(loop == 'W' || loop == 'D' || loop == 'F'))
+        else if (!(loop == 'W' || loop == 'D' || loop == 'F' || loop == 'Q'))
         {
             printf("ERROR: Invalid entered value(s)!");
         }
-        else if (iterations < 3 || iterations > 20)
+        else if ((loop == 'W' || loop == 'D' || loop == 'F') && (iterations < 3 || iterations > 20))
         {
             printf("ERROR: The number of iterations must be between 3-20 inclusive!");
         }
@@ -72,8 +70,9 @@ int main(void)
             {
                 printf("F");
             }
-        }
-  
+        } 
+ 	
+	flag = (loop == 'Q' && iterations == 0) ? 0 : 1;
     }
 
     printf("\n+--------------------+\n");
