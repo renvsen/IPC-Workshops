@@ -32,11 +32,11 @@ int main(void)
         scanf("%d %d", &year, &month);
         if (year < MIN_YEAR || year > MAX_YEAR)
         {
-            printf("   ERROR: The year must be between 2012 and 2022\n");
+            printf("   ERROR: The year must be between 2012 and 2022 inclusive\n");
         }
         if (month < JAN || month > DEC)
         {
-            printf("   ERROR: Jan.(1) - Dec(12)\n");
+            printf("   ERROR: Jan.(1) - Dec.(12)\n");
         }
     }
     printf("\n*** Log date set! ***\n\n");
