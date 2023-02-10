@@ -22,7 +22,7 @@ int main(void)
     const int JAN = 1;
     const int DEC = 12;
 
-    int year, month;
+    int year, month, i;
     year = month = 0;
 
     double morningRating, eveningRating, morningSum, eveningSum;
@@ -48,7 +48,7 @@ int main(void)
     
     printf("\n*** Log date set! ***\n");
 
-    for (int i = 1; i <= LOG_DAYS; i++)
+    for (i = 1;i <= LOG_DAYS; i++)
     {
 
         switch (month)
@@ -97,7 +97,7 @@ int main(void)
             scanf("%lf", &morningRating);
             if (morningRating < 0.0 || morningRating > 5.0)
             {
-                printf("      Error: Rating must between 0.0 and 5.0 inclusive!\n");
+                printf("      ERROR: Rating must be between 0.0 and 5.0 inclusive!\n");
             }
 
         } while (morningRating < 0.0 || morningRating > 5.0);
@@ -109,7 +109,7 @@ int main(void)
             scanf("%lf", &eveningRating);
             if (eveningRating < 0.0 || eveningRating > 5.0)
             {
-                printf("      Error: Rating must between 0.0 and 5.0 inclusive!\n");
+                printf("      ERROR: Rating must be between 0.0 and 5.0 inclusive!\n");
             }
 
         } while (eveningRating < 0.0 || eveningRating > 5.0);
