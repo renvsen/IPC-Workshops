@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////
                                Reflection
                              Workshop - #4
-Full Name  : 
-Student ID#: 
+Full Name  :	Rendell Velasco
+Student ID#: 	140014128
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
@@ -10,3 +10,9 @@ shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
 
+
+1. I made it easy to read by adding indentation for loops and conditional statements, and made code blocks for every sequence. To make it easy to maintain, for each iteration, I made flags for each loop, making the loops have only one entry and one exit. I declare my variables on top of the codes. 
+
+2. If nesting were not possible you can use many if , if-and-else,and else statements making the previous conditions be fulfilled first before the next code can be run. Perhaps making flags as conditions and turning on the flags when conditions are met for blocks of if statements. All of these if statements would go inside a while loop that would allow for iteration. The single print statements can be put inside if statements so it would not be printing again when it is reiterated in one loop since it is not nested.
+
+3. It is inefficient to use a series of “if” optional paths since it would be checking each optional path instead of checking the specific value corresponding to its specific code that is being run. Also it stops multiple optional paths being run all at once when instead one path should be run one at a time.  
