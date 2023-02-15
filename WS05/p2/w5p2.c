@@ -22,9 +22,13 @@ int main(void)
     const int JAN = 1;
     const int DEC = 12;
 
+<<<<<<< Updated upstream
     int year, month, i;
     year = month = 0;
 
+=======
+    int year, month;
+>>>>>>> Stashed changes
     double morningRating, eveningRating, morningSum, eveningSum;
     morningSum = eveningSum = 0.0;
 
