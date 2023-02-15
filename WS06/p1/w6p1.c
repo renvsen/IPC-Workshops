@@ -23,11 +23,7 @@ int main(void)
 
     double mnthlyIncome;
     int nItems;
-<<<<<<< Updated upstream
     double totalCost = 0;
-=======
-    double totalCost;
->>>>>>> Stashed changes
 
     double cost[maxItems];
     int priority[maxItems];
@@ -39,7 +35,7 @@ int main(void)
 
     do
     {
-        printf("\nEnter your monthly NET income:");
+        printf("\nEnter your monthly NET income: $");
         scanf("%lf", &mnthlyIncome);
 
         if (mnthlyIncome < minMnthlyIncome)
@@ -60,17 +56,13 @@ int main(void)
 
         if (nItems < 1 || nItems > 10)
         {
-            printf("ERROR: List is restricted to between 1 and %d\n", maxItems);
+            printf("ERROR: List is restricted to between 1 and %d items.\n", maxItems);
         }
     } while (nItems < 1 || nItems > 10);
 
     for (int i = 0; i < nItems; i++)
     {
-<<<<<<< Updated upstream
         printf("\nItem-%d Details:\n", i + 1);
-=======
-        printf("\nItem-%d Details:", i + 1);
->>>>>>> Stashed changes
         do
         {
             printf("   Item cost: $");
@@ -95,7 +87,6 @@ int main(void)
 
         do
         {
-<<<<<<< Updated upstream
             printf("   Does this item have financing options? [y/n]: ");
             scanf("%s", &financing[i]);
 
@@ -119,17 +110,6 @@ int main(void)
     }
     printf("                       %11.2lf\n", totalCost);
     printf("\nBest of luck in all your future endeavours!\n");
-=======
-            printf("   Does this item have financing options? ");
-            scanf("%c", &financing[i]);
-
-            if (financing[i] != 'y' || financing[i] != 'n')
-            {
-                printf("      ERROR: Must be a lowercase 'y' or 'n'\n");
-            }
-        } while (financing[i] != 'y' || financing[i] != 'n');
-    }
->>>>>>> Stashed changes
 
     return 0;
 }
