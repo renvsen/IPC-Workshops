@@ -22,7 +22,7 @@ int main(void)
     const double minCost = 100.00;
 
     double mnthlyIncome;
-    int nItems;
+    int nItems, i;
     double totalCost = 0;
 
     double cost[maxItems];
@@ -60,7 +60,7 @@ int main(void)
         }
     } while (nItems < 1 || nItems > 10);
 
-    for (int i = 0; i < nItems; i++)
+    for (i = 0; i < nItems; i++)
     {
         printf("\nItem-%d Details:\n", i + 1);
         do
@@ -99,16 +99,20 @@ int main(void)
 
     printf("\nItem Priority Financed        Cost\n");
     printf("---- -------- -------- -----------\n");
-    for (int i = 0; i < nItems; i++)
+    
+    for (i = 0; i < nItems; i++)
     {
         printf("%3d  %5d    %5c    %11.2lf\n", i + 1, priority[i], financing[i], cost[i]);
+    
     }
     printf("---- -------- -------- -----------\n");
-    for (int i = 0; i < nItems; i++)
+
+    for (i = 0; i < nItems; i++)
     {
         totalCost += cost[i];
     }
-    printf("                       %11.2lf\n", totalCost);
+
+    printf("                      $%11.2lf\n", totalCost);
     printf("\nBest of luck in all your future endeavours!\n");
 
     return 0;
