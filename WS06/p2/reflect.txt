@@ -2,7 +2,7 @@
                                Reflection
                              Workshop - #6
 Full Name  :    Rendell Velasco
-Student ID#: 140014128
+Student ID#: 	140014128
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
@@ -11,7 +11,9 @@ piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
 
 1. There are three different kinds of iterations for different situations and uses. It is possible to use the same iteration construct and make them behave the same way as the others; however it is not efficient and very prone to errors. For example, in this workshop, while loops are great for validations as they only have one way to exit the loop and that is through the condition that we set. It will keep looping until the one condition is met. For loops on the other hand, are great for a certain amount of iteration. An example from this workshop is the number of items and their details. It will be a lot harder to code this part using a while loop since we have to manually keep track of the loops that have happened. Using a for loop, this is already taken into account and makes for easy loops. For loops are great for accessing the arrays as we can make the condition the same as the size of the array and only iterate the same size as the array. If it was a while loop it is possible to go out of the initialized memory of the array causing an error in our code. With the for loopÅfs condition being the size of the array, we are sure that it will only cycle through the size of the array.
+
 2. For syntactic errors I tested and debugged the programs reading the compiler errors such as missing semicolons, uninitialized variables, and others.
    For semantic problems I used the given debugger from the IDE tracking the variables and each time they changed making sure they were behaving just as I wanted to. Making sure the right variables are being stored and used instead of the wrong ones are common problems. Also, I would make sure the conditions I placed on all of my logical operators and relational operators are correct so that there is not a wrong logic for the conditions.
+
 3. I will run the program again, making sure I input the correct value and see if the error is consistent. I will also try different values and see how it behaves, finding some sort of pattern that will show faulty logic. If the error persists I will look at the code for the line making sure the variables it is being stored to are correct or the calculations around it are correct. I will try to isolate the problem and fix it.
 
