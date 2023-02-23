@@ -30,16 +30,15 @@ int main(void)
 		notNegative = 0;
 		printf("Enter a pay rate (negative to stop): ");
 		scanf("%lf", &payRates[numPayRates]);
-		if (/* the value entered is greater or equal zero*/)
+		if (payRates[numPayRates] >= 0)
 		{
-			/* add value onto sum and 
-			increment the number of values read and
-			mark this as a not negative value */
-			
+			sum += payRates[numPayRates];
+			notNegative += 1;
+			numPayRates += 1;
 		}
-	} while (/* value entered was not negative */);
+	} while ((payRates[numPayRates] >= 0) && (numPayRates < 10));
 
-	average = /* expression to calculate average pay rate */;
+	average = sum / numPayRates;
 	printf("The average pay rate is %.2lf\n", average);
 
 	/*********************************************************************************/
@@ -56,9 +55,9 @@ int main(void)
 	int i = 0;
 	printf("The pay rates below the average are:\n");
 
-	for (; ; )	// loop over all pay rates
+	for (i = 0; i < numPayRates ; i++)
 	{
-		if( /* pay rate is less than the average */)
+		if(payRates[i] < average)
 		{
 			printf("%.2lf\n", payRates[i]);
 		}
