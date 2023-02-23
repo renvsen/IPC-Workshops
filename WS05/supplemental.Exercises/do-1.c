@@ -29,7 +29,7 @@ int main(void)
 		}
 	} while (n >= 0);
 
-	printf("The average of the numbers is %.2lf\n", /* expression for average */);
+	printf("The average of the numbers is %.2lf\n", (double) sum / count,);
 	
 	return 0;
 }
