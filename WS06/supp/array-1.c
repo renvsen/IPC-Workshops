@@ -57,11 +57,12 @@ int main(void)
 	/**********************************************************************************/
 	int highestPosition = -1;
 	double highestRate = -1.0;
-	for (; ; )
+	for (i = 0; i < numPayRates; i++ )
 	{
-		if (/* this array member is higher than the highest so far*/)
+		if (payRate[i] == 21.50)
 		{
-			/* remember this as the new high rate and store its position */
+			highestPosition = i;
+			highestRate = payRate[i];
 		}
 	}
 
