@@ -30,11 +30,11 @@ int main(void)
 	/* TODO: Complete the loop below to sum the values from 1 - 10                   */
 	/*********************************************************************************/
 	int sum = 0;
-	i = ;
-	while ()
+	i = 0;
+	while (i <= 10)
 	{
-		sum = ;
-		/* something goes here */
+		sum = sum + i;
+		i++;
 	}
 	printf("The sum is %d\n", sum);
 	

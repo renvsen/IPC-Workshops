@@ -22,13 +22,14 @@ int main(void)
 	{
 		printf("Enter an integer (negative to stop): ");
 		scanf("%d", &n);
-		if (/*the value we read is positive or zero*/)
+		if (n >= 0)
 		{
-			/* add the value we just read onto the sum and add one onto count */
+			sum += n;
+			count += 1;
 		}
-	} while ( /* the value entered is not negative */);
+	} while (n >= 0);
 
-	printf("The average of the numbers is %.2lf\n", /* expression for average */);
+	printf("The average of the numbers is %.2lf\n", (double) sum / count,);
 	
 	return 0;
 }
