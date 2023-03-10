@@ -43,7 +43,7 @@ int main(void)
     int i, j, posn;
 
     printf("================================\n");
-    printf("         Treasure Hunt!         \n");
+    printf("         Treasure Hunt!\n");
     printf("================================\n");
     printf("\nPLAYER Configuration\n");
     printf("--------------------\n");
@@ -68,7 +68,7 @@ int main(void)
 
     do
     {
-        printf("Set the path length (a multilpe of %d between %d-%d): ", PATH_MULTIPLE, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
+        printf("Set the path length (a multiple of %d between %d-%d): ", PATH_MULTIPLE, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
         scanf("%d", &gameInfo.pathLength);
 
         if ((gameInfo.pathLength % 5) != 0 || gameInfo.pathLength < MIN_PATH_LENGTH || gameInfo.pathLength > MAX_PATH_LENGTH)
@@ -85,7 +85,7 @@ int main(void)
 
         if (gameInfo.maxMoves < playerInfo.nOfLives || gameInfo.maxMoves >(0.75 * gameInfo.pathLength))
         {
-            printf("     Value must be between %d and %d\n", playerInfo.nOfLives, (int)(0.75 * gameInfo.pathLength));
+            printf("    Value must be between %d and %d\n", playerInfo.nOfLives, (int)(0.75 * gameInfo.pathLength));
         }
 
     } while (gameInfo.maxMoves < playerInfo.nOfLives || gameInfo.maxMoves > (0.75 * gameInfo.pathLength));
