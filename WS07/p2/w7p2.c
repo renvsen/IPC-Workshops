@@ -25,7 +25,7 @@ struct PlayerInfo
     int nOfLives;
     char symbol;
     int treasuresFound;
-    int moves[MAX_PATH_LENGTH];
+    int movesHistory[MAX_PATH_LENGTH];
     int move;
 };
 
@@ -41,7 +41,9 @@ int main(void)
 {
     struct PlayerInfo playerInfo = { 0, ' ', 0, {0}, 0 };
     struct GameInfo gameInfo = { 0, 0, {0}, {0} };
-    int i, j, posn;
+    int i, j, posn, playing;
+
+    playing = 1;
 
     printf("================================\n");
     printf("         Treasure Hunt!\n");
@@ -72,12 +74,12 @@ int main(void)
         printf("Set the path length (a multiple of %d between %d-%d): ", PATH_MULTIPLE, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
         scanf("%d", &gameInfo.pathLength);
 
-        if ((gameInfo.pathLength % 5) != 0 || gameInfo.pathLength < MIN_PATH_LENGTH || gameInfo.pathLength > MAX_PATH_LENGTH)
+        if ((gameInfo.pathLength % PATH_MULTIPLE) != 0 || gameInfo.pathLength < MIN_PATH_LENGTH || gameInfo.pathLength > MAX_PATH_LENGTH)
         {
             printf("     Must be a multiple of %d and between %d-%d!!!\n", PATH_MULTIPLE, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
         }
 
-    } while ((gameInfo.pathLength % 5) != 0 || gameInfo.pathLength < MIN_PATH_LENGTH || gameInfo.pathLength > MAX_PATH_LENGTH);
+    } while ((gameInfo.pathLength % PATH_MULTIPLE) != 0 || gameInfo.pathLength < MIN_PATH_LENGTH || gameInfo.pathLength > MAX_PATH_LENGTH);
 
     do
     {
@@ -156,11 +158,15 @@ int main(void)
 
     do
     {
+        if (playerInfo.move > 0)
+        {
+            printf("  ");
+        }
         for (i = 0; i < playerInfo.move; i++)
         {
             if (i == playerInfo.move - 1)
             {
-                printf("%c\n", playerInfo.symbol);
+                printf("%c", playerInfo.symbol);
             }
             else
             {
@@ -168,8 +174,34 @@ int main(void)
             }
         }
 
-        printf("  ");
-        
+        printf("\n  ");
+        for ( i = 0; i < gameInfo.pathLength; i++)
+        {
+            if (playerInfo.movesHistory[i] == 1)
+            {
+                if (gameInfo.treasures[i] == 1 && gameInfo.bombs[i] == 1)
+                {
+                    printf("&");
+                }
+                else if (gameInfo.treasures[i] == 1)
+                {
+                    printf("$");
+                }
+                else if (gameInfo.bombs[i] == 1)
+                {
+                    printf("!");
+                }
+                else
+                {
+                    printf(".");
+                }
+            }
+            else
+            {
+                printf("-");
+            }
+        }
+
         printf("\n  ");
         for (i = 1, j = 1; i <= gameInfo.pathLength; i++)
         {
@@ -201,22 +233,77 @@ int main(void)
         printf("  Lives:  %d  | Treasures:  %d  |  Moves Remaining: %d\n", playerInfo.nOfLives, playerInfo.treasuresFound, gameInfo.maxMoves);
         printf("+---------------------------------------------------+\n");
 
-        do
+        if (playerInfo.nOfLives == 0)
         {
-            printf("Next move [%d-%d]: ", 1, gameInfo.pathLength);
-            scanf("%d", &playerInfo.move);
+            playing = 0;
+        }else if (gameInfo.maxMoves == 0) 
+        {
+            playing = 0;
+        }
 
-            if (playerInfo.move < 1 || playerInfo.move > gameInfo.pathLength)
+        if (playing)
+        {
+
+            do
             {
-                printf("  Out of Range!!!\n");
+                printf("Next move [%d-%d]: ", 1, gameInfo.pathLength);
+                scanf("%d", &playerInfo.move);
+
+                if (playerInfo.move < 1 || playerInfo.move > gameInfo.pathLength)
+                {
+                    printf("  Out of Range!!!\n");
+                }
+            } while (playerInfo.move < 1 || playerInfo.move > gameInfo.pathLength);
+
+            if (playerInfo.movesHistory[playerInfo.move - 1] == 1)
+            {
+                printf("\n===============> Dope! You've been here before!\n\n");
             }
-        } while (playerInfo.move < 1 || playerInfo.move > gameInfo.pathLength);
+            else
+            {
+                playerInfo.movesHistory[playerInfo.move - 1] = 1;
+                
+                if (playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.treasures[playerInfo.move - 1] && playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.bombs[playerInfo.move - 1])
+                {
+                    printf("\n===============> [&] !!! BOOOOOM !!! [&]\n");
+                    printf("===============> [&] &&& Life Insurance Payout !!! [&]\n\n");
+                    playerInfo.nOfLives--;
+                    playerInfo.treasuresFound++;
+                }
+                else if (playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.treasures[playerInfo.move - 1])
+                {
+                    printf("\n===============> [$] $$$ Found Treasure! $$$ [$]\n\n");
+                    playerInfo.treasuresFound++;
+                }
+                else if (playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.bombs[playerInfo.move - 1])
+                {
+                    printf("\n===============> [!] !!! BOOOOOM! !!! [!]\n\n");
+                    playerInfo.nOfLives--;
+                }
+                else
+                {
+                    printf("\n===============> [.] ...Nothing found here ... [.]\n\n");
+                }
 
-        gameInfo.maxMoves -= 1;
-        playerInfo.moves[playerInfo.move - 1] = 1;
+                gameInfo.maxMoves -= 1;
 
-    } while (playerInfo.nOfLives != 0 && gameInfo.maxMoves != 0);
+                if (gameInfo.maxMoves == 0)
+                {
+                    printf("No more MOVES remaining!\n\n");
+                }
+                if (playerInfo.nOfLives == 0)
+                {
+                    printf("No more LIVES remaining!\n\n");
+                }
+            }
+        }
+    } while (playing);
 
+    printf("\n##################\n");
+    printf("#   Game over!   #\n");
+    printf("##################\n");
+    printf("\nYou should play again and try to beat your score!\n");
+    
     return 0;
 }
 
