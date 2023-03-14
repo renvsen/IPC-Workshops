@@ -1,11 +1,35 @@
 ///////////////////////////////////////////////////////////////////////////
                                Reflection
                              Workshop - #7
-Full Name  : 
-Student ID#: 
+Full Name  : 	Rendell Velasco
+Student ID#: 	140014218
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
 shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
+
+1. I was successful in coding the non-repetitive sections of logic like drawing of the ruler, board, player, and others. I accomplished the ruler by comparing the structures of the players move history array with the structure of the game’s treasure and bomb array. I figured out that if I set the input of the user as the index and subtract the input by one; it can be used as the position for the arrays. For example, the user inputs 1. We subtract one from one since the first index of arrays is always zero. I would then store 1 in the player’s history array signifying that this position is taken. The user input subtracted by one is then inserted to the index of player’s move history arrays, game’s treasure array, and game’s bomb array. to compare them. When the user inputs 1 it should access the first element of the array held in index 0. If we do not subtract 1 it would access the second element held in index 1. This is the main logic of this workshop, manipulating the user input to be equivalent to the indexes of the arrays. 
+
+2.The use of structures simplified my program by making clear which variables pairs with which object. It would be hard to remember which variables go with the player or for the game. Structures provide a way to organize information efficiently making them correspond to their proper groups. If this workshop were to be coded in an alternative way it would be assigning all of the variables corresponding with the player with the “player” then the variable name and same thing with game info but with “game” instead followed by the variable name. Grouping the variables together on the top would also help in organizing them neatly.
+
+3.I had done 3 levels nesting for my program
+
+Do
+{
+	If (playing)
+	{
+		If (playerInfo.movesHistory[ player.info.move - 1 ] == 1 )
+		{
+		
+		}
+		Else
+		{
+			If( game.Info.maxMoves == 0)
+			{
+	
+			}	
+		}
+	}
+}while(playing)

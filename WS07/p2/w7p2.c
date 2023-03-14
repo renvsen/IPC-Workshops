@@ -230,7 +230,7 @@ int main(void)
         }
 
         printf("\n+---------------------------------------------------+\n");
-        printf("  Lives:  %d  | Treasures:  %d  |  Moves Remaining: %d\n", playerInfo.nOfLives, playerInfo.treasuresFound, gameInfo.maxMoves);
+        printf("  Lives:  %d  | Treasures:  %d  |  Moves Remaining: %2d\n", playerInfo.nOfLives, playerInfo.treasuresFound, gameInfo.maxMoves);
         printf("+---------------------------------------------------+\n");
 
         if (playerInfo.nOfLives == 0)
@@ -246,7 +246,7 @@ int main(void)
 
             do
             {
-                printf("Next move [%d-%d]: ", 1, gameInfo.pathLength);
+                printf("Next Move [%d-%d]: ", 1, gameInfo.pathLength);
                 scanf("%d", &playerInfo.move);
 
                 if (playerInfo.move < 1 || playerInfo.move > gameInfo.pathLength)
@@ -266,7 +266,7 @@ int main(void)
                 if (playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.treasures[playerInfo.move - 1] && playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.bombs[playerInfo.move - 1])
                 {
                     printf("\n===============> [&] !!! BOOOOOM !!! [&]\n");
-                    printf("===============> [&] &&& Life Insurance Payout !!! [&]\n\n");
+                    printf("===============> [&] $$$ Life Insurance Payout!!! [&]\n\n");
                     playerInfo.nOfLives--;
                     playerInfo.treasuresFound++;
                 }
@@ -277,12 +277,12 @@ int main(void)
                 }
                 else if (playerInfo.movesHistory[playerInfo.move - 1] == gameInfo.bombs[playerInfo.move - 1])
                 {
-                    printf("\n===============> [!] !!! BOOOOOM! !!! [!]\n\n");
+                    printf("\n===============> [!] !!! BOOOOOM !!! [!]\n\n");
                     playerInfo.nOfLives--;
                 }
                 else
                 {
-                    printf("\n===============> [.] ...Nothing found here ... [.]\n\n");
+                    printf("\n===============> [.] ...Nothing found here... [.]\n\n");
                 }
 
                 gameInfo.maxMoves -= 1;
