@@ -1,11 +1,18 @@
 ///////////////////////////////////////////////////////////////////////////
                                Reflection
                              Workshop - #8
-Full Name  : 
-Student ID#: 
+Full Name  :    Rendell Velasco
+Student ID#:    140014218
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
 shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
+
+
+1.One benefit of this feature is being able to manipulate the values while inside a function call since it is being passed by address. One negative feedback is that if a value is corrupted in the function call it will be left on the address and affect the main function as well.
+
+2.The function display catfoodData exhibits a high cohesion and low coupling as it references only 1 structure while the function calculateReportData uses a lot of the results from the calculation into the next function being called. I would improve the first function by having it call just the structure instead of its many members at once. I would improve the second function by having different parameters so that calculations and their data are not entirely done on one function.
+
+3.Instead of passing the members of structure to a function, the structure itself can be passed. This eliminates the chances of error for displaying the wrong data as its parameters limit what types can be passed to the function. Also when a structure is passed by value there is no issue as it is just a copy and any mistakes or errors that can happen in the function call is avoided.

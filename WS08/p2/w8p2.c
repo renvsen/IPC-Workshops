@@ -1,9 +1,9 @@
 /*/////////////////////////////////////////////////////////////////////////
                           Workshop - #8 (P2)
-Full Name  : 
-Student ID#: 
-Email      : 
-Section    : 
+Full Name  :	Rendell Velasco
+Student ID#:	140014218
+Email      :	rvelasco6@myseneca.ca
+Section    :	NDD
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
@@ -236,7 +236,7 @@ double calculateCostPerCal(const double* productPrice, const double* totalCal, d
 // 14. Derive a reporting detail record based on the cat food product data
 struct ReportData calculateReportData(const struct CatFoodInfo productData)
 {
-	struct ReportData analysis = { 0 };
+	struct ReportData analysis = { {0} };
 	analysis.product = productData;
 	analysis.kgWeight = convertLbsKg(&productData.lbsWeight, NULL);
 	analysis.gWeight = convertLbsG(&productData.lbsWeight, NULL);
@@ -281,9 +281,9 @@ void displayFinalAnalysis(struct CatFoodInfo cheapestProduct)
 {
 	printf("Final Analysis\n");
 	printf("--------------\n");
-	printf("Based on the comparison data, the PURR-fect economical options is:\n");
+	printf("Based on the comparison data, the PURRR-fect economical option is:\n");
 	printf("SKU:%07d Price: $%.2lf\n\n", cheapestProduct.sku, cheapestProduct.price);
-	printf("Happy shoppping!\n");
+	printf("Happy shopping!\n");
 }
 
 // ----------------------------------------------------------------------------
@@ -294,7 +294,7 @@ void start(void)
 	int i,j,cheap;
 
 	struct CatFoodInfo product[MAX_PRODUCTS] = { {0,0.0,0,0.0} };
-	struct ReportData analysis[MAX_PRODUCTS] = { 0 };
+	struct ReportData analysis[MAX_PRODUCTS] = { {{ 0 }} };
 
 	openingMessage(MAX_PRODUCTS, SGGSTD_SRVING_IN_GRAMS);
 
